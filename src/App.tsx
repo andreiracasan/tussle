@@ -1,7 +1,18 @@
-import React from 'react';
+// Components
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
-function App() {
-  return <h1>Tussle</h1>;
+// Apps
+import TextEditor from './apps/TextEditor/index';
+
+export default function App() {
+  return (
+    <div className="app__container">
+      <div className="app__main">
+        <Navbar />
+        <TextEditor />
+      </div>
+      <Footer />
+    </div>
+  );
 }
-
-export default App;
