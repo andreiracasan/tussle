@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "Tussle",
+  "description": "The everything tab — a browser extension for all things productivity: personal notes, key goals, important news etc.",
+  "version": "1.0",
+  "author": "Andrei Racasan",
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "permissions": ["storage"]
+}
