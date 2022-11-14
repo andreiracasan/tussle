@@ -12,6 +12,19 @@ export default function Terminal() {
   ]);
   const [input, setInput] = useState('');
 
+  const getQuote = async () => {
+    const _fetch = await fetch('https://api.quotable.io/random');
+    const data = await _fetch.json();
+
+    setTerminalDisplay((previousState) => [
+      ...previousState,
+      data.content.toLowerCase(),
+    ]);
+    setInput('');
+
+    return;
+  };
+
   function _handleKeyDown(e: any) {
     if (e.key === 'Enter') {
       if (input === 'clear') {
@@ -19,6 +32,10 @@ export default function Terminal() {
         setInput('');
 
         return;
+      }
+
+      if (input === 'get quote') {
+        getQuote();
       }
 
       setTerminalDisplay((previousState) => [...previousState, input]);
