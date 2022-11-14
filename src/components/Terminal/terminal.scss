@@ -1,0 +1,48 @@
+.terminal {
+  background-color: #000;
+  width: 100%;
+  max-width: 800px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf,
+    inset -2px -2px grey, inset 2px 2px #fff;
+  font-weight: bold;
+
+  & .terminal__top-bar {
+    text-align: center;
+    background-color: #000080;
+    color: #fff;
+    padding: 0.25rem;
+    font-size: 0.9rem;
+    margin: 3px 2px 3px 2px;
+    border-bottom: 1px solid gray;
+  }
+
+  & .terminal__view {
+    padding: 0.5rem 1rem;
+    color: #fff;
+    overflow: auto;
+
+    & p {
+      display: flex;
+
+      & span {
+        display: block;
+        color: #0f0;
+        margin-right: 0.5rem;
+      }
+    }
+
+    & .terminal__bottom {
+      & span {
+        color: #0f0;
+      }
+
+      & .terminal__input {
+        all: unset;
+        color: white;
+      }
+    }
+  }
+}
