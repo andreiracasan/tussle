@@ -27,11 +27,11 @@
   & .terminal__view {
     padding: 0.5rem 1rem;
     color: #fff;
-    overflow: hidden;
+    overflow: auto;
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
-    & p {
+    & div {
       display: flex;
 
       & span {
@@ -42,13 +42,14 @@
     }
 
     & .terminal__bottom {
-      padding-bottom: 100px;
+      padding: 0 0 2.5rem 0;
+
       & span {
         color: #0f0;
       }
 
       & .terminal__input {
-        cursor: default!important;
+        cursor: default;
         all: unset;
         color: white;
       }
