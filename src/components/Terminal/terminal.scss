@@ -8,6 +8,7 @@
   box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf,
     inset -2px -2px grey, inset 2px 2px #fff;
   font-weight: bold;
+  position: absolute;
 
   & .terminal__top-bar {
     text-align: center;
@@ -17,13 +18,19 @@
     font-size: 0.9rem;
     margin: 3px 2px 3px 2px;
     border-bottom: 1px solid gray;
+    cursor: default;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
   }
 
   & .terminal__view {
     padding: 0.5rem 1rem;
     color: #fff;
     overflow: auto;
-
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
     & p {
       display: flex;
 
