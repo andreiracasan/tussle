@@ -10,7 +10,7 @@
   font-weight: bold;
   position: absolute;
 
-  & .terminal__top-bar {
+  &__top-bar {
     text-align: center;
     background-color: #000080;
     color: #fff;
@@ -24,7 +24,7 @@
     user-select: none; /* Standard syntax */
   }
 
-  & .terminal__view {
+  &__view {
     padding: 0.5rem 1rem;
     color: #fff;
     overflow: auto;
@@ -41,15 +41,15 @@
       }
     }
 
-    & .terminal__bottom {
+    &--bottom {
       padding: 0 0 2.5rem 0;
 
       & span {
         color: #0f0;
       }
 
-      & .terminal__input {
-        cursor: default;
+      &__input {
+        cursor: default!important;
         all: unset;
         color: white;
       }
