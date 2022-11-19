@@ -8,6 +8,7 @@
   box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf,
     inset -2px -2px grey, inset 2px 2px #fff;
   font-weight: bold;
+  font-size: 1rem;
   position: absolute;
 
   & .terminal__top-bar {
@@ -27,7 +28,8 @@
   & .terminal__view {
     padding: 0.5rem 1rem;
     color: #fff;
-    overflow: auto;
+    overflow: scroll;
+    height: 100%;
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
@@ -49,9 +51,10 @@
       }
 
       & .terminal__input {
-        cursor: default;
         all: unset;
-        color: white;
+        color: #fff;
+        width: 100%;
+        cursor: default;
       }
     }
   }
