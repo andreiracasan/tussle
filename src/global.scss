@@ -65,4 +65,39 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: center;
+  &__desktop {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    &__icon {
+      height: 80px;
+      width: 80px;
+      padding-top: 50px;
+      margin: 5px;
+      background-repeat: no-repeat;
+      background-position: center 10px;
+      text-align: center;
+      cursor: pointer;
+      line-height: 1;
+      & span {
+        -webkit-user-select: none; /* Safari */
+        -ms-user-select: none; /* IE 10 and IE 11 */
+        user-select: none; /* Standard syntax */
+      }
+      &:hover {
+        color: #fff;
+        background-color: #000080;
+      }
+      &--focus {
+        color: #fff;
+        background-color: blue;
+        backdrop-filter: grayscale(100%);
+        -webkit-backdrop-filter: grayscale(100%);
+        -moz-backdrop-filter: grayscale(100%);
+      }
+      &--folder {
+        background-image: url("folder.png");
+      }
+    }
+  }
 }
