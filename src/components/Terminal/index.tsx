@@ -1,24 +1,26 @@
 // React
 import { useState, useEffect, useRef } from 'react';
 
+// Functions
+import getAllBookmarks from '../../utils/getBookmarks';
+
 // Styling
 import './terminal.scss';
 
 export default function Terminal() {
-  const [terminalDisplay, setTerminalDisplay] = useState([
-    '<i>a</i>',
-    'b',
-    'c',
-  ]);
+
 
   const terminalInput = useRef<HTMLInputElement>(null);
+
+  const [terminalDisplay, setTerminalDisplay] = useState<any[]>([]);
+
   const [input, setInput] = useState('');
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [dragCoords, setDragCoords] = useState({ x: 0, y: 0 });
   const [terminalPos, setTerminalPos] = useState({ x: 0, y: 0 });
   const [dragging, setDragging] = useState(false);
 
-  const terminal = document.querySelector('.terminal');
+  const terminal = document.querySelector('.terminal__view');
   const topbar = document.querySelector('.terminal__top-bar');
 
   //set focus on the input when clicking terminal
@@ -111,6 +113,10 @@ export default function Terminal() {
       case 'clear':
         setTerminalDisplay([]);
         break;
+      case 'get bookmarks':
+        const _bookmarks = getAllBookmarks();
+        setTerminalDisplay((previousState) => [...previousState, _bookmarks]);
+        break;
       case 'get quote':
         getQuote();
         break;
@@ -120,7 +126,7 @@ export default function Terminal() {
       default:
         setTerminalDisplay((previousState) => [
           ...previousState,
-          'command not recognised',
+          '<p>command not recognised</p> <p>type help for a full list of commands</p>',
         ]);
     }
 
