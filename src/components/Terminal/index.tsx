@@ -1,5 +1,5 @@
 // React
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 // Functions
 import getAllBookmarks from '../../utils/getBookmarks';
@@ -8,7 +8,12 @@ import getAllBookmarks from '../../utils/getBookmarks';
 import './terminal.scss';
 
 export default function Terminal() {
+
+
+  const terminalInput = useRef<HTMLInputElement>(null);
+
   const [terminalDisplay, setTerminalDisplay] = useState<any[]>([]);
+
   const [input, setInput] = useState('');
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [dragCoords, setDragCoords] = useState({ x: 0, y: 0 });
@@ -20,7 +25,7 @@ export default function Terminal() {
 
   //set focus on the input when clicking terminal
   const focusInput = () => {
-    document.getElementById('terminal__input')?.focus();
+    terminalInput.current?.focus();
   };
 
   useEffect(() => {
@@ -144,12 +149,13 @@ export default function Terminal() {
             <div dangerouslySetInnerHTML={{ __html: item }} />
           </div>
         ))}
-        <div className="terminal__bottom">
+        <div className="terminal__view--bottom">
           <span>root@tussle:~$ </span>
           <input
+            ref={terminalInput}
             autoFocus
             id="terminal__input"
-            className="terminal__input"
+            className="terminal__view--bottom__input"
             type="text"
             onKeyDown={handleReturn}
             onChange={(e) => setInput(e.target.value)}
